@@ -12,9 +12,9 @@ VMD (Visual Molecular Dynamics) - https://www.ks.uiuc.edu/Development/Download/d
 
 Openbabel - http://openbabel.org/wiki/Category:Installation
 
-MUSTANG (MUltiple (protein) STructural AligNment alGorithm) - http://lcb.infotech.monash.edu.au/mustang/
+MUSTANG v3.2.3 (MUltiple (protein) STructural AligNment alGorithm) - http://lcb.infotech.monash.edu.au/mustang/
 
-AmberTools (http://ambermd.org/AmberTools.php)
+AmberTools18 (http://ambermd.org/AmberTools.php)
 
 
 
