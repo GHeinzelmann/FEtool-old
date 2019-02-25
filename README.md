@@ -24,7 +24,7 @@ The calculations are divided in three steps, equilibration (folder ./equil), pre
 
 ## Equilibration
 
-The equilibration starts from a docked pose or a crystal structure, gradually releasing restraints applied on the ligand, and then performing a final simulation with an unrestrained ligand. The necessary paramaters for the ligand are also generated in this stage, using the General Amber Force Field (GAFF), and the AM1-BCC charge model. Inside the program main folder, type:
+The equilibration starts from a docked pose or a crystal structure, gradually releasing restraints applied on the ligand, and then performing a final simulation with an unrestrained ligand. The necessary parameters for the ligand are also generated in this stage, using the General Amber Force Field (GAFF), and the AM1-BCC charge model. Inside the program main folder, type:
 
 python FEtool.py -i input.in -s equil
 
@@ -34,5 +34,12 @@ $AMBERHOME/miniconda/bin/python FEtool.py -i input.in -s equil
 
 This command will create an ./equil folder, with one folder for each of the docked poses. In order to run the simulations, you can use the run-local.bash script (to run them locally), or the PBS-run script, which is designed to run in a queue system. Both of these files might have to be adjusted, depending on your computer or server configuration. The number of simulations depend on the release_eq array from the input file, which is described in more detail in the user guide. 
 
+## Preparation
+
+The second stage starts from the equilibrated system, redefining the dummy/anchor atoms and the restraints for use in the free energy calculation. If the APR method is to be used, the ligand in this stage is pulled from the binding site towards the solvent, generating states that will be used in the APR procedure. If only double decoupling will be performed, no pulling is needed, and only one simulation is necessary, with the ligand in the bound state in the presence of restraints. This is defined in the input.in file, with more details in the user guide. To run this stage type:
+
+python FEtool.py -i input.in -s prep
+
+, or use the miniconda option shown in the previous section. Once this stage is concluded, the system is ready for the binding free energy calculation of each of the docked poses. 
 
 
