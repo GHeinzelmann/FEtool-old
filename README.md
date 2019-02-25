@@ -40,6 +40,18 @@ The second stage starts from the equilibrated system, redefining the dummy/ancho
 
 python FEtool.py -i input.in -s prep
 
-, or use the miniconda option shown in the previous section. Once this stage is concluded, the system is ready for the binding free energy calculation of each of the docked poses. 
+, or use the miniconda option shown in the previous section. It is possible that the ligand has left the binding site during equilibration, due to an unstable docked pose. In this case, the preparation is not performed for this pose, and a message appears after runnig the command above. 
+
+Once the preparation stage is concluded, the system is ready for the binding free energy calculation of each of the docked poses. The same way as the equil stage, there is a folder for each pose (given that it did not unbind during equilibration), and the simulations can be run locally or in a server such as tscc.
+
+## Free energy calculation
+
+Starting from the states created in the prep stage, we can now perform the binding free energy calculations, which are located inside the ./fe folder. In this example we will perform both APR and DD, so the results can be directly compared using the two routes. Again in the program main folder, type:
+
+python FEtool.py -i input.in -s fe
+
+For each pose, a folder will be created inside ./fe/. For each pose, there will be three folders: PMF, restraints and DD. The restraints folder conatins all the simulations needed for the application/removal of restraints. The PMF folder contains the folders for the "pull" process of APR, calculated using umbrella sampling. The DD folder contains the decoupling of the ligand electrostatic/LJ interactions, both in the binding site and in bulk. 
+
+
 
 
