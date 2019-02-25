@@ -1,4 +1,4 @@
-# FEtool
+# FEtool.py
 
 FEtool.py is a python tool for fully automated absolute binding free energy calculations. It encompasses the creation of the system, generation of parameters, preparation of the simulation files, and analysing the simulations to retrieve the binding free energy. 
 
