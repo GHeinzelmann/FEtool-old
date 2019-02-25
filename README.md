@@ -2,7 +2,7 @@
 
 FEtool.py is a python tool for fully automated absolute binding free energy calculations. It encompasses the creation of the system, generation of parameters, preparation of the simulation files, and analysing the simulations to retrieve the binding free energy. By using the pmemd.cuda software from Amber, it is able to perform several calculations at a reduced computational cost.
 
-Fetool.py can perform binding free energy calculations through a physical route, using the attach-pull-release (APR) method, as well as an alchemical route, using a double decoupling (DD) procedure in the presence of restraints. The program is compatible with AMBER18 (both DD and APR), as well as AMBER16 (APR only). It also requires a few installed programs such as VMD, which are explained in detail below. 
+Fetool.py can perform binding free energy calculations through a physical route, using the attach-pull-release (APR) method, as well as an alchemical route, using a double decoupling (DD) procedure in the presence of restraints. The program is compatible with AMBER18 (both DD and APR), as well as AMBER16 (APR only). It also requires a few installed programs such as VMD, which are listed in the next section. 
 
 # Getting started
 
@@ -15,6 +15,8 @@ Openbabel - http://openbabel.org/wiki/Category:Installation
 MUSTANG v3.2.3 (MUltiple (protein) STructural AligNment alGorithm) - http://lcb.infotech.monash.edu.au/mustang/
 
 AmberTools18 (http://ambermd.org/AmberTools.php)
+
+The folder ./all-poses contains an example of system input files, both a docked receptor (hiTanimoto-5uf0_5uez_docked.pdb), as well as 9 poses generated using Autodock Vina, and converted to .pdb using AutodockTools. Below we show an example using these files, with all the necessary steps in the calculation. 
 
 
 
