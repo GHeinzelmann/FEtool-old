@@ -14,7 +14,7 @@ Openbabel - http://openbabel.org/wiki/Category:Installation
 
 MUSTANG v3.2.3 (MUltiple (protein) STructural AligNment alGorithm) - http://lcb.infotech.monash.edu.au/mustang/
 
-AmberTools18 (http://ambermd.org/AmberTools.php)
+AmberTools18 - http://ambermd.org/AmberTools.php
 
 The folder ./all-poses contains an example of system input files, both a docked receptor (hiTanimoto-5uf0_5uez_docked.pdb), as well as 9 poses generated using Autodock Vina, and converted to .pdb using AutodockTools. Below we show an example using these files, with all the necessary steps in the calculation. 
 
