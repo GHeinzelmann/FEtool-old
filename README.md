@@ -20,19 +20,19 @@ The folder ./all-poses contains an example of system input files, both a docked 
 
 # Running a sample calculation
 
-The calculations are divided in three steps, equilibration (folder equil), preparation (folder prep) and free energy calculation (folder fe). The input file with all the needed paramaters is called input.in, with the meaning of each parameter explained in more detail in the user guide. For our sample calculation, we will used the values already provided in the input.in file included in this distribution. The poses_list parameter sets up the calculation for the first 5 poses from Autodock Vina, included in the ./all-poses folder. 
+The calculations are divided in three steps, equilibration (folder ./equil), preparation (folder ./prep) and free energy calculation (folder ./fe). The input file with all the needed paramaters is called input.in, with the meaning of each parameter explained in more detail in the user guide. For our sample calculation, we will use the values already provided in the input.in file included in this distribution. The poses_list parameter sets up the calculation for the first 5 poses from Autodock Vina, included in the ./all-poses folder. 
 
 ## Equilibration
 
-Inside the program main folder, type:
+The equilibration starts from a docked pose or a crystal structure, gradually releasing restraints applied on the ligand, and then performing a final simulation with an unrestrained ligand. The necessary paramaters for the ligand are also generated in this stage, using the General Amber Force Field (GAFF), and the AM1-BCC charge model. Inside the program main folder, type:
 
 python FEtool.py -i input.in -s equil
 
-The program is compatible with python 2.7 versions. If you have anopther version, or you find that this command gives an error, you can use the python version included in the Ambertools distribution:
+FEtool.py is compatible with python 2.7 versions. If you have anopther version, or you find that this command gives an error, you can use the python version included in the Ambertools distribution:
 
 $AMBERHOME/miniconda/bin/python FEtool.py -i input.in -s equil
 
-This command will create an ./equil folder, with 
+This command will create an ./equil folder, with one folder for each of the docked poses. In order to run the simulations, you can use the run-local.bash script (to run them locally), or the PBS-run script, which is designed to run in a queue system. Both of these files might have to be adjusted, depending on your computer or server configuration. The number of simulations depend on the release_eq array from the input file, which is described in more detail in the user guide. 
 
 
 
