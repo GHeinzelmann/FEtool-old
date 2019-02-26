@@ -42,13 +42,23 @@ python FEtool.py -i input.in -s prep
 
 , or use the miniconda option as shown in the previous section. It is possible that the ligand has left the binding site during equilibration, due to an unstable docked pose. In this case, the preparation is not performed for this pose, and a warning message appears after running the command above. The same way as the equil stage, there is a folder for each pose (given that it did not unbind during equilibration) in the ./prep directory, and the simulations can be run locally or in a server such as tscc. Once the preparation simulations are concluded, the systems are ready for the binding free energy calculations. 
 
-## Free energy calculation
+## Free energy calculation 
+
+### Simulations
 
 Starting from the states created in the prep stage, we can now perform the binding free energy calculations, which will be located inside the ./fe folder. In this example we will perform both APR and DD, so the results can be directly compared using the two routes. Again in the program main folder, type:
 
 python FEtool.py -i input.in -s fe
 
 For each pose, a folder will be created inside ./fe/., and inside there will be three folders: ./pmf, ./restraints and ./dd. The restraints folder contains all the simulations needed for the application/removal of restraints. The pmf folder contains the folders for the "pull" process of APR, calculated using umbrella sampling. The dd folder contains the coupling/decoupling of the ligand electrostatic/LJ interactions, both in the binding site and in bulk. A script called run-all.bash, inside the run_files folder, can be used to run these simulatons quickly using the PBS scripts. A similar script can be written to do the same, using your particular running protocol. 
+
+### Analysis
+
+Once all of the simulations are concluded, it is time to process the output files and obtain the binding free energies using the two methods. Here a few parameters can be set concerning the analysis, such as using TI or MBAR for double decoupling, number of blocks for block data analysis, and the Gaussian weights if TI is used for double decoupling. More details on these parameters can be found in the user guide. Inside the main folder type:
+
+python FEtool.py -i input.in -s analysis
+
+You should see a ./Results directory inside each ./fe/pose* folder, containing the final results using the two methods in the Results.dat file. This folder also contains the results for each of the chosen data blocks, which is useful to check for convergence. This fully automated procedure can be readily applied for any other ligand that binds to the second BRD4 bromodomain, and with minimal adjustments it can be extended to several other proteins.
 
 
 
