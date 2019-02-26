@@ -42,7 +42,7 @@ pull_spacing = 0.1       # Interval between pulling simulations
 
 weights = [ 0.02359 0.05347 0.08004 0.10158 0.11675 0.12457 0.12457 0.11675 0.10158 0.08004 0.05347 0.02359 ] # Weights for Gaussian quadrature, make sure it matches the lambda values
 
-dd_type = MBAR # Integration method for double decoupling (MBAR or TI with Gaussian quadrature)
+dd_type = TI # Integration method for double decoupling (MBAR or TI with Gaussian quadrature)
 
 blocks = 5 # Number of blocks for block data analysis
 
