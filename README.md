@@ -32,7 +32,7 @@ FEtool.py is compatible with python 2.7 versions. If you have another version, o
 
 $AMBERHOME/miniconda/bin/python FEtool.py -i input.in -s equil
 
-This command will create an ./equil folder, with one folder for each of the docked poses. In order to run the simulations inside each folder, you can use the run-local.bash script (to run them locally), or the PBS-run script, which is designed to run in a queue system. Both of these files might have to be adjusted, depending on your computer or server configuration. The number of simulations and the applied restraints will depend on the _release_eq_ array defined in the input file. 
+This command will create an ./equil folder, with one folder inside for each of the docked poses (pose0, pose1, etc.). In order to run the simulations inside each folder, you can use the run-local.bash script (to run them locally), or the PBS-run script, which is designed to run in a queue system. Both of these files might have to be adjusted, depending on your computer or server configuration. The number of simulations and the applied restraints will depend on the _release_eq_ array defined in the input file. 
 
 ## Preparation
 
