@@ -73,10 +73,10 @@ To include a new protein system, some additional input data is needed. They incl
 
 A paper explaining the whole FEtool.py procedure is in preparation, as well as a detailed user guide which will be published here. For more information you can contact the author directly:
 
-Germano Heinzelmann
-Departamento de Física, Universidade Federal de Santa Catarina
-Florianópolis - SC  88040-970 Brasil
-email: germanohei@gmail.com
+Germano Heinzelmann <br/>
+Departamento de Física, Universidade Federal de Santa Catarina <br/>
+Florianópolis - SC  88040-970 Brasil <br/>
+email: germanohei@gmail.com <br/>
 
 
 
