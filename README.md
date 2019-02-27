@@ -70,7 +70,7 @@ The sample system shown here uses a particular ligand that binds to the second b
 
 To include a new receptor system, some additional input data is needed. They include a reference.pdb file to align the system using MUSTANG, three chosen protein anchors, and a few variables for ligand anchor atom search. These can be found inside the ./systems-library folder for three other bromodomains (CREBBP, BRD4(1) and BAZ2B), Lysozyme, and the Major Urinary Protein (MUP). Other systems will be added with time, as the program is further tested and validated.    
 
-# Additional information
+# More information
 
 A paper explaining the whole FEtool.py procedure is in preparation, as well as a detailed user guide which will be published here. For more information you can contact the author directly:
 
