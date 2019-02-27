@@ -20,7 +20,7 @@ The folder ./all-poses contains an example of system input files, with a docked 
 
 # Running a sample calculation
 
-The calculations are divided in three steps, equilibration (folder ./equil), preparation (folder ./prep) and free energy calculation (folder ./fe). The input file with all the needed FEtool.py parameters is called input.in, with the meaning of each each explained in more detail in the user guide. For our sample calculation, we will use the values already provided in the input.in file included in this distribution. Briefly, the poses_list parameter sets up the calculation for the first 5 poses from Autodock Vina, all in the ./all-poses folder. The input.in file can be modified to perform the calculations in the 5uf0 crystal structure, by changing the calc_type option to "crystal", the celpp_receptor option to "5uf0", and the ligand_name option to "89J", which is the ligand residue name in the 5uf0 pdb structure. 
+The calculations are divided in three steps, equilibration (folder ./equil), preparation (folder ./prep) and free energy calculation (folder ./fe). The input file with all the needed FEtool.py parameters is called input.in, with the meaning of each explained in more detail in the user guide. For our sample calculation, we will use the values already provided in the input.in file included in this distribution. Briefly, the poses_list parameter sets up the calculation for the first 5 poses from Autodock Vina, all in the ./all-poses folder. The input.in file can be modified to perform the calculations in the 5uf0 crystal structure, by changing the calc_type option to "crystal", the celpp_receptor option to "5uf0", and the ligand_name option to "89J", which is the ligand residue name in the 5uf0 pdb structure. 
 
 ## Equilibration
 
@@ -46,15 +46,15 @@ python FEtool.py -i input.in -s prep
 
 ### Simulations
 
-Starting from the states created in the prep stage, we can now perform the binding free energy calculations, which will be located inside the ./fe folder. In this example we will perform both APR and DD, so the results can be directly compared using the two routes. Again in the program main folder, type:
+Starting from the states created in the prep stage, we can now perform the binding free energy calculations, which will be located inside the ./fe folder. In this example we will do both APR and DD, so the results can be directly compared using the two routes. Again in the program main folder, type:
 
 python FEtool.py -i input.in -s fe
 
-For each pose or crystal structure, a folder will be created inside ./fe, and inside there will be three folders: ./pmf, ./restraints and ./dd. The restraints folder contains all the simulations needed for the application/removal of restraints. The pmf folder contains the folders for the "pull" process of APR, calculated using umbrella sampling. The dd folder contains the coupling/decoupling of the ligand electrostatic/LJ interactions, both in the binding site and in bulk. A script called run-all.bash, inside the run_files folder, can be used to run these simulatons quickly using the PBS scripts provided. A similar script can be written to do the same, using your particular running protocol. 
+For each pose or crystal structure, a folder will be created inside ./fe, and inside there will be three folders: ./pmf, ./restraints and ./dd. The restraints folder contains all the simulations needed for the application/removal of restraints. The pmf folder contains the folders for the "pull" process of APR, calculated using umbrella sampling. The dd folder contains the coupling/decoupling of the ligand electrostatic/LJ interactions, both in the binding site and in bulk. A script called run-all.bash, inside the ./run_files folder, can be used to run these simulatons quickly using the PBS scripts provided. A similar script can be written to do the same, using your particular running protocol. 
 
 ### Analysis
 
-Once all of the simulations are concluded, it is time to process the output files and obtain the binding free energies using the two methods. Here a few parameters can be set concerning the analysis, such as using TI or MBAR for double decoupling, number of blocks for block data analysis, and the Gaussian weights if TI is used for double decoupling. Inside the main folder type:
+Once all of the simulations are concluded, it is time to process the output files and obtain the binding free energies using the two methods. Here a few parameters concerning the analysis can be set in the input.in file, such as using TI or MBAR for double decoupling, number of blocks for block data analysis, and the Gaussian weights if TI is used for double decoupling. Inside the main folder type:
 
 python FEtool.py -i input.in -s analysis
 
@@ -64,7 +64,7 @@ You should see a ./Results directory inside each ./fe/pose folder, containing th
 
 ## Other ligands to BRD4(2)
 
-The sample system shown here uses a particular ligand that binds to the second bromodomain of the BRD4 protein - BRD4(2). The system alignment, assignment of the ligand anchor atoms, and positioning of the dummy atoms is done automatically, so these same calculations can be extended to any other ligand that binds to BRD4(2). The only thing needed is the files in the ./all-poses folder to be changed, including the docked receptor and poses pdb files, as well as the crystal structure if desired.     
+The sample system shown here uses a particular ligand that binds to the second bromodomain of the BRD4 protein - BRD4(2). The system alignment, assignment of the ligand anchor atoms, and positioning of the dummy atoms is done automatically, so these same calculations can be extended to any other ligand that binds to this receptor. The only thing needed is the files in the ./all-poses folder to be changed, including the docked receptor and poses pdb files, as well as the crystal structure if desired.     
 ## Other proteins
 
 To include a new protein system, some additional input data is needed. They include a reference.pdb file to align the system using MUSTANG, three chosen protein anchors, and a few variables for ligand anchor atom search. These can be found inside the ./systems-library folder for three other bromodomains (CREBBP, BRD4(1) and BAZ2B), Lysozyme, and the Major Urinary Protein (MUP). Other systems will be added with time, as the program is further tested and validated.    
