@@ -16,7 +16,7 @@ MUSTANG v3.2.3 (MUltiple (protein) STructural AligNment alGorithm) - http://lcb.
 
 AmberTools16 or later - http://ambermd.org/AmberTools.php
 
-The folder ./all-poses contains an example of system input files, with a docked receptor from the 5uez crystal structure (hiTanimoto-5uf0_5uez_docked.pdb), as well as 9 poses for the ligand with the 5uf0 crystal structure (pose0.pdb to pose8.pdb). The docking files were generated and converted to .pdb using Autodock Vina and AutodockTools, using the protocol from the CELLP challenge (https://github.com/drugdata/d3r/wiki). The ./all-poses folder also contains the crystal structure file for 5uf0. Below we show an example of using these files to calculate the standard binding free energies the top 5 docked poses and the crystal structure, with all the necessary steps in the calculation. 
+The folder ./all-poses contains an example of system input files, with a docked receptor from the 5uez crystal structure (hiTanimoto-5uf0_5uez_docked.pdb), as well as 9 poses for the ligand with the 5uf0 crystal structure (pose0.pdb to pose8.pdb). The receptor is the second bromodomain from the BRD4 protein - BRD4(2). The docking files were generated and converted to .pdb using Autodock Vina and AutodockTools, using the protocol from the CELPP challenge (https://github.com/drugdata/d3r/wiki). The ./all-poses folder also contains the crystal structure file for 5uf0. Below we show an example of using these files to calculate the standard binding free energies the top 5 docked poses and the crystal structure, with all the necessary steps in the calculation. 
 
 # Running a sample calculation
 
@@ -60,6 +60,14 @@ python FEtool.py -i input.in -s analysis
 
 You should see a ./Results directory inside each ./fe/pose folder, containing the final results using the two methods in the Results.dat file. This folder also contains the results for each of the chosen data blocks, which is useful to check for convergence. This fully automated procedure can be readily applied for any other ligand that binds to the second BRD4 bromodomain, and with minimal adjustments it can be extended to several other proteins.
 
+# Extending it to other systems
 
+## Other ligands to BRD4(2)
+
+The sample system shown above uses a ligand that binds to the second bromodomain of the BRD4 protein - BRD4(2). The system alignment, assignment of the ligand anchor atoms, and positioning of the dummy atoms is done automatically, so these same calculations can be readily extended to any other ligand that binds to BRD4(2). All that is needed is the files in the ./all-poses folder to be changed, including the docked receptor and poses pdb files, as well as the crystal structure if desired.     
+
+## Other proteins
+
+To include a new protein system, some additional input data is needed. They include a reference.pdb file to align the system using MUSTANG, three chosen protein anchors, and a few variables for ligand anchor atom search. These can be found inside the ./systems-library folder in the FEtool.py package. Included are three other bromodomains - CREBBP, BRD4(1) and BAZ2B, Lysozyme, and the Major Urinary Protein (MUP). Other systems will be added with time, as the program is further tested and validated.    
 
 
