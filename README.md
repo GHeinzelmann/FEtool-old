@@ -72,7 +72,7 @@ To include a new receptor system, some additional input data is needed. They inc
 
 # More information
 
-A paper explaining the whole FEtool.py procedure is in preparation, as well as a detailed user guide which is located in the ./doc folder (still in progress). For more information you can contact the author directly:
+A paper explaining the whole FEtool.py theoretical aspects and calculation procedure is currently in preparation. A detailed user guide is located in the ./doc folder, which is still in in progress. For more information you can contact the author directly:
 
 Germano Heinzelmann <br/>
 Departamento de Física, Universidade Federal de Santa Catarina <br/>
