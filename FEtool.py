@@ -335,6 +335,8 @@ if stage == 'equil':
   for i in range(0, len(poses_def)):
     rng = len(release_eq) - 1
     pose = poses_def[i]
+    if not os.path.exists('./all-poses/'+pose+'.pdb'):
+      continue
     print('Setting up '+str(poses_def[i]))
     # Get number of simulations
     num_sim = len(release_eq)
@@ -377,6 +379,8 @@ elif stage == 'prep':
   # Prepare systems after equilibration for poses listed in the input file
   for i in range(0, len(poses_def)):
     pose = poses_def[i]
+    if not os.path.exists('./equil/'+pose):
+      continue
     print('Setting up '+str(poses_def[i]))
     # Get number of simulations
     num_sim = int(apr_distance/pull_spacing)+1
@@ -423,6 +427,8 @@ elif stage == 'fe':
   os.chdir('fe')
   for i in range(0, len(poses_def)):
     pose = poses_def[i]
+    if not os.path.exists('../prep/'+pose):
+      continue
     print('Setting up '+str(poses_def[i]))
     # Create and move to pose directory
     if not os.path.exists(pose):
