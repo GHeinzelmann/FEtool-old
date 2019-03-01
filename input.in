@@ -14,7 +14,7 @@ poses_list = [0,1,2,3,4]                        # List of poses for docked calcu
 
 ligand_name     = DOK   # Arbitrary if using docked poses 
 
-# Protein anchors, using original sequence (BAZ2B)
+# Protein anchors, using original sequence 
 
 H1 = :403@CA          
 H2 = :424@CA
