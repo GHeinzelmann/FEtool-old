@@ -2,6 +2,7 @@
 
 FEtool.py is a python tool for fully automated absolute binding free energy calculations. Its workflow encompasses the creation of the bound complex, generation of parameters using Antechamber, preparation of the simulation files, and post-processing to retrieve the binding free energy. By using the _pmemd.cuda_ software from AMBER, it is able to perform several calculations at a reduced computational cost using graphics processing units (GPUs).
 
+
 FEtool.py can perform binding free energy calculations by a physical route, through the attach-pull-release (APR) method, as well as an alchemical route, using a double decoupling (DD) procedure in the presence of restraints. The program is compatible with AMBER18 (both DD and APR), as well as AMBER16 (APR only). It also requires a few installed programs to work properly, which are listed in the next section. 
 
 # Getting started
@@ -23,6 +24,8 @@ The folder ./all-poses contains an example of system input files, with a docked 
 # Running a sample calculation
 
 The simulations and analysis from this example will be performed inside the ./FEtool folder. They are divided in three steps, equilibration (folder ./equil), preparation (folder ./prep) and free energy calculation (folder ./fe). The input file with all the needed FEtool.py parameters is called input.in, with the meaning of each explained in more detail in the user guide. For our sample calculation, we will use the values already provided in the input.in file included in this distribution. Briefly, the poses_list parameter sets up the calculation for the first 5 poses from Autodock Vina, all in the ./all-poses folder. The input.in file can be modified to perform the calculations in the 5uf0 crystal structure, by changing the calc_type option to "crystal", the celpp_receptor option to "5uf0", and the ligand_name option to "89J", which is the ligand residue name in the 5uf0 pdb structure. 
+
+![](doc/workflow.png)
 
 ## Equilibration
 
